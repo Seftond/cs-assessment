@@ -1,0 +1,24 @@
+Time Variable   |   Insert      |  Append
+extraLargeArray |   1.839s      |   8.983 x 10^-3 s
+largeArray      |13.000 x 10^-3s|   1.061 x 10^-3 s
+mediumArray     |253.1 x 10^-6 s|   232.5 x 10^-6 s
+smallArray      |68.8 x 10^-6 s |   145.5 x 10^-6 s 
+tinyArray       |114.3 x 10^-6 s|   192.9 x 10^-6 s 
+
+4. 
+In the table, the times shown reflect the amount of time it takes to perform an operation on an array and 
+input each element into a new array. The two different methods are the unshift method and the push method. 
+The times show that as the array sent into the function gets larger, the push method becomes much more
+efficient than the unshift method. Even though the unshift method is faster with the tiny array, by the     
+time the input is the mediumArray size, the push method is faster. The conclusion is that the runtime for the
+unshift method scales much quicker than the runtime for the push method.
+
+5. 
+The insert function is much slower than the append method because the insert function uses the unshift method,
+while the append function uses the push method. The way the unshift and push methods operate is very different.
+The push method simply adds an element to the end of the array, so no reindexing has to occur. On the other hand,
+the unshift method has to reindex all of the elements already in the array every time it's called because 
+it adds the element being unshifted to the front of the array. Every time an element is added, every element
+in the array must be moved down the array by one space. It's obvious that with larger sets of data, the unshift
+methods gets extremely slow because it will be performing operations on every one of those elements contained in
+the array, where as the push method simply operates on the one element being added to the array.
